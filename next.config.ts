@@ -1,7 +1,20 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source: "/360-view",
+        destination: "/",
+        permanent: false,
+      },
+      {
+        source: "/admin/virtual-tours",
+        destination: "/admin/dashboard",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
